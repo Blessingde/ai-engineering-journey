@@ -1,25 +1,4 @@
-# April 1, 2026: Vectors vs. Embeddings
-
-## 1. The Core Concept (1D Array)
-
-Today I learned that in computer science and data structures, a **vector** is fundamentally a **1-dimensional (1D) array** or list of numbers. The "dimension" refers only to the container, not the data itself.
-
-To find any number in that vector, I only need **one coordinate** (the index).
-
-## 2. The Confusion: High-Dimensional Space (768D)
-
-This is what was confusing me: When working with **word embeddings** (like the 768D vector for "King"), the "768D" does _not_ mean the container is 768-dimensional.
-
-It is still a 1D vector. The "768" is telling you that the word lives in a 768-dimensional mathematical "meaning space."
-
-$$\text{Embedding}_{\text{King}} = [x_1, x_2, x_3, ..., x_{768}]$$
-$$V \in \mathbb{R}^{768}$$
-
-**Key takeaway for my documentation:** In ML, "X-Dimensional Embedding" = "1D Vector with X unique features."
-
-# April 1, 2026: The Dual Meaning of "Dimensions" (D)
-
-Today I cleared up a major confusion. In Machine Learning, the term "Dimension" (or "D") has two completely different meanings depending on the context.
+> Today I cleared up a major confusion. In Machine Learning, the term "Dimension" (or "D") has two completely different meanings depending on the context.
 
 ---
 

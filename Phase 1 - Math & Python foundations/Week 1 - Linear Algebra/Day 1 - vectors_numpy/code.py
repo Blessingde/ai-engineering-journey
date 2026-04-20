@@ -65,7 +65,28 @@ X_batch = np.random.randn(8, 3)   # 8 samples, 3 features each
 outputs  = X_batch @ W.T           # (8,3) @ (3,4) = (8,4)
 print(f"Batch output: {outputs.shape}")  # (8, 4)
 
-# 
+# Matrix inverse and solving linear systems
+A = np.array([[2.0, 1.0], [1.0, 3.0]])
+b_vec = np.array([5.0, 10.0])
+x_sol = np.linalg.solve(A, b_vec)  # solve Ax = b
+print(f"Solution: {x_sol}")
+
+# Broadcasting: NumPy stretches smaller arrays to match larger ones
+# This is how batch normalization, bias addition, etc. work
+
+matrix = np.ones((3, 4))
+bias   = np.array([1.0, 2.0, 3.0, 4.0])  # shape (4,)
+
+result = matrix + bias   # (3,4) + (4,) → bias added to every row
+print(result)
+
+# Subtracting the mean (used in normalization constantly)
+data = np.random.randn(100, 5)   # 100 samples, 5 features
+mean = data.mean(axis=0)         # mean per feature, shape (5,)
+std  = data.std(axis=0)          # std per feature, shape (5,)
+normalized = (data - mean) / std  # broadcast across 100 rows
+print(f"Normalized mean: {normalized.mean(axis=0).round(6)}")  # ≈ 0
+print(f"Normalized std:  {normalized.std(axis=0).round(6)}")   # ≈ 1
 
 
 
